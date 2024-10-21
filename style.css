@@ -5,7 +5,7 @@
 }
 
 body{
-    background: url(/bg-desktop.webp);
+    background: url(assent/bg-desktop.webp);
     margin: 0;
     padding: 0;
 }
@@ -25,6 +25,15 @@ body{
     flex-basis: calc(33% - 6rem);
 }
 
+.cartao_conteudo_resposta{
+    transform: rotateY(180deg);
+}
+.cartao_conteudo_resposta{
+    transform: rotateY(180deg);
+}
+.cartao_conteudo_resposta{
+    transform: rotateY(180deg);
+}
 .cartao__conteudo {
     background-color: var(--card-front-color);
     text-align: center;
