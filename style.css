@@ -1,22 +1,23 @@
-:root{
-    --texto-color: #DBE4EF;
-    --card-front-color: #144480;
-    --card-back-color: #00F4BF;
+
+:root {
+    --text-color: #DBE4EF;
+    --card-front-color: #001f46;
+    --card-back-color: #ffffff;
 }
 
-body{
-    background: url(assent/bg-desktop.webp);
+body {
+    background: url(bg-desktop.webp);
     margin: 0;
     padding: 0;
 }
 
 #container {
-    display: flex; /* Elementos dispostos em linha */
+    display: flex; 
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 4rem;
     gap: 3rem;
-}   
+}
 
 .cartao {
     margin: 1rem 1rem;
@@ -25,15 +26,6 @@ body{
     flex-basis: calc(33% - 6rem);
 }
 
-.cartao_conteudo_resposta{
-    transform: rotateY(180deg);
-}
-.cartao_conteudo_resposta{
-    transform: rotateY(180deg);
-}
-.cartao_conteudo_resposta{
-    transform: rotateY(180deg);
-}
 .cartao__conteudo {
     background-color: var(--card-front-color);
     text-align: center;
@@ -44,8 +36,8 @@ body{
 }
 
 .cartao__conteudo h3 {
-    color: var(--texto-color);
-    border: 1px solid var(--texto-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
     text-align: left;
     padding: 0.5rem;
     position: absolute;
@@ -55,50 +47,72 @@ body{
     backface-visibility: hidden;
 }
 
-.cartao_conteudo_pergunta,
-.cartao_conteudo_resposta{
-    backface-visibility: hidden;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.cartao_conteudo_resposta{
-    transform: rotateY(180deg);
-}
-O CSS é uma linguagem de estilização
-
 .cartao__conteudo p {
     margin-top: 1rem;
     padding: 2rem;
     margin-top: 4rem;
+    font-size: 1.4vw;
 }
 
-.cartao_conteudo_pergunta p{
-    color: var(--texto-color);
+.cartao_conteudo_pergunta p {
+    color: var(--text-color);
     font-weight: 500;
 }
 
-.cartao_conteudo_resposta p{
+.cartao_conteudo_resposta p {
     color: var(--card-back-color);
     font-weight: 700;
-} 
+}
 
-.cartao:hover .cartao__conteudo{
+.cartao.active .cartao__conteudo {
     transform: rotateY(180deg);
 }
 
-footer{
+.cartao_conteudo_pergunta,
+.cartao_conteudo_resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cartao_conteudo_resposta {
+    transform: rotateY(180deg);
+    background-color: rgba(0, 244, 191, 0.2);
+    border: 4px solid var(--card-back-color);
+}
+
+footer {
     background-color: black;
-    color: azure;
+    color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 2rem;
 }
 
-footer p{
+footer p {
     text-align: center;
     font-size: 0.6rem;
-    margin: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 560px) {
+    
+    body {
+        background: url('img/bg-mobile.webp'), no-repeat cover;
+    }
+
+    .cartao {
+        flex: 1 0 calc(100% - 1rem)
+    }
+
+    .cartao__conteudo h3 {
+        font-size: 3vw;
+    }
+
+    .cartao__conteudo p {
+        font-size: 3.8vw;
+    }
 }
